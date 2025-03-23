@@ -13,6 +13,7 @@
 LoginServer
  - 유저 인증
  - 유저 검증
+
 GameServer
  - 서버 조회
  - 캐릭터 조회 / 생성
