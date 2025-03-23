@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServer", "RestServer\GameServer.csproj", "{19CA81FE-0F07-4B38-9C6C-9E1DCB88EB7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginServer", "LoginServer\LoginServer.csproj", "{DE0115B4-0219-4BC1-831D-717E1FD90BA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}"
+	ProjectSection(SolutionItems) = preProject
+		Shared\Protos\auth.proto = Shared\Protos\auth.proto
+		Shared\Protos\login.proto = Shared\Protos\login.proto
+		Shared\Protos\player.proto = Shared\Protos\player.proto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19CA81FE-0F07-4B38-9C6C-9E1DCB88EB7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CA81FE-0F07-4B38-9C6C-9E1DCB88EB7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CA81FE-0F07-4B38-9C6C-9E1DCB88EB7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CA81FE-0F07-4B38-9C6C-9E1DCB88EB7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0115B4-0219-4BC1-831D-717E1FD90BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0115B4-0219-4BC1-831D-717E1FD90BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0115B4-0219-4BC1-831D-717E1FD90BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0115B4-0219-4BC1-831D-717E1FD90BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA17AFC-0869-4C79-B9AC-EE0DC7D49FE7}
+	EndGlobalSection
+EndGlobal
