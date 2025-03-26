@@ -1,5 +1,5 @@
 using LoginServer.Data;
-using LoginServer.Helpers;
+using Common.Helpers;
 using LoginServer.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +16,7 @@ builder.Services.AddControllers().AddMvcOptions(options =>
     options.OutputFormatters.Insert(0, new ProtoBufOutputFormatter());
 });
 
+builder.Services.AddGrpc();
 builder.Services.AddSingleton<JwtService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

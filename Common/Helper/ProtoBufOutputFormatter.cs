@@ -1,4 +1,4 @@
-﻿namespace LoginServer.Helpers
+﻿namespace Common.Helpers
 {
     using Google.Protobuf;
     using Microsoft.AspNetCore.Mvc.Formatters;

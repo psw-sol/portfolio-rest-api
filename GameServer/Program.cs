@@ -1,9 +1,10 @@
 using GameServer.Data;
-using GameServer.Helpers;
+using Common.Helpers;
 using GameServer.Middleware;
 using GameServer.Services;
 using Microsoft.EntityFrameworkCore;
 using Shared.Grpc;
+using GameServer.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
