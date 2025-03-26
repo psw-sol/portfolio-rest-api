@@ -4,4 +4,7 @@ LoginServer/obj
 GameServer/bin
 GameServer/obj
 
+
+Common/bin
+Common/obj
 .vs/
