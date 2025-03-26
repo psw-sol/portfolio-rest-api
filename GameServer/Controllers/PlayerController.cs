@@ -2,6 +2,7 @@
 using GameServer.Data.Entities;
 using GameServer.Helpers;
 using GameServer.Services;
+using GameServer.Services.Interfaces;
 using GameServer.Util;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,14 +14,11 @@ namespace GameServer.Controllers
     [Route("v1/player")]
     public class PlayerController : ControllerBase
     {
-        private readonly IScopedDbContextAccessor _dbAccessor;
-        private readonly AuthGrpcClient _authGrpcClient;
-        private readonly GlobalDbContext _globalDb;
+        private readonly IPlayerService _playerService;
 
-        public PlayerController(IScopedDbContextAccessor dbAccessor, AuthGrpcClient authGrpcClient)
+        public PlayerController(IPlayerService playerService)
         {
-            _dbAccessor = dbAccessor;
-            _authGrpcClient = authGrpcClient;
+            _playerService = playerService;
         }
 
         [TokenAuthorize]
@@ -30,48 +28,11 @@ namespace GameServer.Controllers
         public async Task<IActionResult> Enter([FromBody] PPlayerSelectRequest request)
         {
             int userId = (int)HttpContext.Items["UserId"];
-            int? serverId = (int)HttpContext.Items["ServerId"];
+            int serverId = (int)HttpContext.Items["ServerId"];
 
-            var db = _dbAccessor.DbContext;
-            if (db == null) return BadRequest("No DB context for ServerId");
+            var result = await _playerService.PlayerSelectAsync(userId, serverId);
 
-            var player = await db.Players.FirstOrDefaultAsync(c => c.UserId == userId);
-
-            if (player == null)
-            {
-                var server = await _globalDb.Servers.FirstOrDefaultAsync(s => s.Id == serverId);
-                if (server == null)
-                {
-                    throw new Exception("Not Exist Server");
-                }
-
-                if(server.CurPlayers > server.MaxPlayers)
-                {
-                    throw new Exception("Too Many Players On Server");
-                }
-
-                player = new Player
-                {
-                    UserId = userId,
-                    ServerId = request.ServerId,
-                    Name = $"User{userId}",
-                    Status = new PlayerStatus { Level = 1, Exp = 0, JobId = 1 }
-                };
-                db.Players.Add(player);
-                await db.SaveChangesAsync();
-
-                server.CurPlayers++;
-                await _globalDb.SaveChangesAsync();
-            }
-
-            var response = new PPlayerSelectResponse
-            {
-                PlayerId = player.Id,
-                Name = player.Name,
-                Status = new PPlayerStatusInfo { Level = player.Status.Level, Exp = player.Status.Exp, JobId = player.Status.JobId}
-            };
-
-            return Ok(response);
+            return Ok(result);
         }
     }
 }

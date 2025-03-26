@@ -5,13 +5,6 @@ VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginServer", "LoginServer\LoginServer.csproj", "{DE0115B4-0219-4BC1-831D-717E1FD90BA2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{2A3A057F-5D22-31FD-628C-DF5EF75AEF1E}"
-	ProjectSection(SolutionItems) = preProject
-		Shared\Protos\auth.proto = Shared\Protos\auth.proto
-		Shared\Protos\login.proto = Shared\Protos\login.proto
-		Shared\Protos\player.proto = Shared\Protos\player.proto
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServer", "GameServer\GameServer.csproj", "{8CB1D2F4-457E-DC9A-2B1C-5000C4602A0C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6B65195D-E1C1-439E-B2F9-9EA882E1AE24}"
