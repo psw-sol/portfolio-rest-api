@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Shared.Protos";
+
+message PResponse {
+  int32 errorCode = 1;
+  string errMsg = 2;
+  bytes data = 3;
+}

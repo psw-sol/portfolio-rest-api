@@ -10,6 +10,7 @@
         "dependencies": {
           "Google.Protobuf": "3.30.1",
           "Grpc.Core": "2.46.6",
+          "Grpc.Tools": "2.71.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.14",
           "Microsoft.EntityFrameworkCore": "8.0.14",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
@@ -77,6 +78,7 @@
           }
         }
       },
+      "Grpc.Tools/2.71.0": {},
       "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.14": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
@@ -380,6 +382,13 @@
       "sha512": "sha512-Z7HJGqJYyKb53qfp1jf0wRDYs3sxOnkAFxXAW6q52LLmX/zxzjtFLI9eaWO5UC0weiWjn4iT1FzR+tj9qYZAMg==",
       "path": "grpc.core.api/2.46.6",
       "hashPath": "grpc.core.api.2.46.6.nupkg.sha512"
+    },
+    "Grpc.Tools/2.71.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r8zHZm7kHdMrtujnkcuQ0BNDH2969at/8Va1ZzQgVblaQzR7tm8JlA3G+5Z5IFbvvf9PcAr1/VcoSR+g7j4Nyw==",
+      "path": "grpc.tools/2.71.0",
+      "hashPath": "grpc.tools.2.71.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.14": {
       "type": "package",
