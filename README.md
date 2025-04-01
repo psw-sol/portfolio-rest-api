@@ -1,7 +1,12 @@
+# etc
+육아 진행중이라 작업이 자주 진행이 안됩니다.
+
 # portfolio-rest-api
 로그라이크성 게임.
 
 인증용 MemberDb, 공용 GlobalDb, 서버당 샤딩한 GameDbXX 사용
+
+Request / Response protobuf 사용. 
 
 서버당 캐릭터 하나 보유.
 
@@ -17,7 +22,6 @@
 
 인게임 진행은 이벤트 소싱으로 저장 및 필요시 검증 | 로드
 
-
 LoginServer
  - 유저 인증
  - 유저 검증
@@ -30,4 +34,3 @@ GameServer
  - Behavior 처리(미작업)
  - 인게임 진행(미작업)
  - 강화(미작업)
- - 
