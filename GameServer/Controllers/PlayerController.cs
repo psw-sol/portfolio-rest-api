@@ -1,4 +1,5 @@
-﻿using GameServer.Data;
+﻿using Common.Controller;
+using GameServer.Data;
 using GameServer.Data.Entities;
 using GameServer.Helpers;
 using GameServer.Services;
@@ -12,7 +13,7 @@ namespace GameServer.Controllers
 {
     [ApiController]
     [Route("v1/player")]
-    public class PlayerController : ControllerBase
+    public class PlayerController : BaseController
     {
         private readonly IPlayerService _playerService;
 
@@ -30,7 +31,10 @@ namespace GameServer.Controllers
             int userId = (int)HttpContext.Items["UserId"];
             int serverId = (int)HttpContext.Items["ServerId"];
 
-            var result = await _playerService.PlayerSelectAsync(userId, serverId);
+            var result = await RunInTransactionAsync(serverId, async () =>
+            {
+                return await _playerService.PlayerSelectAsync(userId, serverId);
+            });
 
             return Ok(result);
         }

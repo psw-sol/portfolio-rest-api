@@ -1,5 +1,6 @@
 ﻿namespace LoginServer.Controllers
 {
+    using Common.Controller;
     using LoginServer.Data;
     using LoginServer.Data.Entities;
     using LoginServer.Services;
@@ -12,7 +13,7 @@
 
     [ApiController]
     [Route("api/auth")]
-    public class AuthController : ControllerBase
+    public class AuthController : BaseController
     {
         private readonly MemberDbContext _db;
         private readonly JwtService _jwt;

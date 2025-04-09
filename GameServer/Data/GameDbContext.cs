@@ -1,14 +1,17 @@
-﻿using GameServer.Data.Entities;
+﻿using Common.Database;
+using Common.Helper;
+using GameServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameServer.Data
 {
-    public class GameDbContext : DbContext
+    public class GameDbContext : BaseDbContext
     {
+        public GameDbContext(DbContextOptions<GameDbContext> options) : base(options) { }
         public DbSet<Player> Players { get; set; }
         public DbSet<PlayerStatus> PlayersStatuses { get; set; }
+        public DbSet<ReserveTask> ReserveTasks { get; set; }
 
-        public GameDbContext(DbContextOptions<GameDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,6 +20,7 @@ namespace GameServer.Data
                 .WithOne(s => s.Player)
                 .HasForeignKey<PlayerStatus>(s => s.PlayerId);
         }
+
     }
 
 }

@@ -1,13 +1,14 @@
-﻿using GameServer.Data.Entities;
+﻿using Common.Database;
+using GameServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameServer.Data
 {
-    public class GlobalDbContext : DbContext
+    public class GlobalDbContext : BaseDbContext
     {
-        public DbSet<Server> Servers { get; set; }
 
         public GlobalDbContext(DbContextOptions<GlobalDbContext> options) : base(options) { }
+        public DbSet<Server> Servers { get; set; }
     }
 }
 

@@ -1,9 +1,10 @@
-﻿using LoginServer.Data.Entities;
+﻿using Common.Database;
+using LoginServer.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LoginServer.Data
 {
-    public class MemberDbContext : DbContext
+    public class MemberDbContext : BaseDbContext
     {
         public MemberDbContext(DbContextOptions<MemberDbContext> options) : base(options) { }
 

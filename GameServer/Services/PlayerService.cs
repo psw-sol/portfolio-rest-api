@@ -50,10 +50,8 @@ namespace GameServer.Services
                     Status = new PlayerStatus { Level = 1, Exp = 0, JobId = 1 }
                 };
                 db.Players.Add(player);
-                await db.SaveChangesAsync();
 
                 server.CurPlayers++;
-                await _globalDb.SaveChangesAsync();
             }
 
             var response = new PPlayerSelectResponse
